@@ -1,6 +1,7 @@
 package com.gmail.linhqng207.smack.Services
 
 import android.graphics.Color
+import com.gmail.linhqng207.smack.Controller.App
 import java.util.*
 
 object UserDataService {
@@ -17,9 +18,12 @@ object UserDataService {
          email = ""
          name = ""
 
-        AuthService.authToken = ""
-        AuthService.userEmail = ""
-        AuthService.isLoggedIn = false
+        App.prefs.authToken = ""
+        App.prefs.userEmail = ""
+        App.prefs.isLoggedIn = false
+
+        MessageService.clearMessages()
+        MessageService.clearChannels()
     }
 
     fun returnAvatarColor(component: String) : Int {
