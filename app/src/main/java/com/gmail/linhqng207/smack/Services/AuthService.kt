@@ -7,11 +7,11 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
 import com.gmail.linhqng207.smack.Controller.App
 import com.gmail.linhqng207.smack.Utilities.*
 import org.json.JSONException
 import org.json.JSONObject
+
 
 object AuthService {
 
@@ -73,7 +73,9 @@ object AuthService {
                 error ->
             Log.d("ERROR","Could not login user: $error")
             complete(false)
-        }){
+        }
+
+            ){
             override fun getBodyContentType(): String {
                 return "application/json; charset=utf-8"
             }
@@ -81,6 +83,8 @@ object AuthService {
             override fun getBody(): ByteArray {
                 return requestBody.toByteArray()
             }
+
+
 
         }
 
